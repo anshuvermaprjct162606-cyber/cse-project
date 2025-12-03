@@ -1,5 +1,5 @@
 body {
-    background-color: #a3c4e3; 
+    background-color: #000000; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ body {
 }
 
 .padding {
-    background-color: #ecd682a4; 
+    background-color: #eaf829f9; 
 }
 
 .content {
