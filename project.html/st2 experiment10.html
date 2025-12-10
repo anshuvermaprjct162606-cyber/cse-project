@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Navbar</title>
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+   
+    .navbar {
+      background-color: #111827;         /* dark navy */
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    /* SEARCH BAR */
+    .nav-search {
+      flex: 1;                          /* takes available space */
+      max-width: 500px;
+      display: flex;
+    }
+
+    .nav-search input {
+      flex: 1;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .nav-search button {
+      padding: 8px 15px;
+      border: none;
+      background-color: #f59e0b;        /* amber */
+      color: #111827;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+      font-weight: 600;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links li a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+      color: #fbbf24;                   /* light yellow */
+    }
+
+    /* ICON BUTTONS (Cart, Login) */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-outline {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #e5e7eb;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .btn-outline:hover {
+      background-color: #e5e7eb;
+      color: #111827;
+    }
+
+    .cart {
+      font-size: 0.9rem;
+    }
+
+    /* ====== MOBILE MENU BUTTON (HAMBURGER) ====== */
+    .menu-toggle {
+      display: none;           /* hidden on desktop */
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* We will hide the checkbox itself */
+    #menu-checkbox {
+      display: none;
+    }
+
+    /* ====== RESPONSIVE STYLES ====== */
+    @media (max-width: 768px) {
+
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      /* Show hamburger on small screens */
+      .menu-toggle {
+        display: block;
+      }
+
+      /* Put logo + menu button + cart/login in top row */
+      .nav-top-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      /* Make search bar full width on mobile */
+      .nav-search {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Hide links by default on mobile */
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid #374151;
+      }
+
+      /* When checkbox is checked, show the menu */
+      #menu-checkbox:checked + label + ul {
+        display: flex;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVBAR START ====== -->
+  <nav class="navbar">
+
+    <!-- Top row for mobile: logo + hamburger + actions -->
+    <div class="nav-top-row">
+      <!-- LOGO -->
+      <div class="nav-logo">ShopEasy</div>
+
+      <!-- HAMBURGER MENU (only visible on small screens) -->
+      <input type="checkbox" id="menu-checkbox" />
+      <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+      <!-- CART + LOGIN -->
+      <div class="nav-actions">
+        <span class="cart">🛒 Cart</span>
+        <button class="btn-outline">Login</button>
+      </div>
+    </div>
+
+    <!-- NAV LINKS (Desktop: visible, Mobile: toggle using checkbox) -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+
+    <!-- SEARCH BAR (center on desktop, full width on mobile) -->
+    <form class="nav-search">
+      <input type="text" placeholder="Search for products..." />
+      <button type="submit">Search</button>
+    </form>
+
+  </nav>
+ 
+  <div style="padding: 20px;">
+    <h2>Welcome to ShopEasy</h2>
+    <p>This is just placeholder content under the navbar.</p>
+  </div>
+
+</body>
+</html>
